@@ -1,9 +1,9 @@
-﻿# speventreceiverman
+# SharePoint Event Receiver Manager (2007 & 2010)
  
-**Project Description**
+## Project Description
 The SharePoint Event Receiver Manager tool draws upon the needs I've had as a SharePoint developer and the ideas of several other tools that just covered part of what I needed them to do but just didn't go quite far enough to make the easy to use and painless. Written in C#.
 
-**Features**
+## Features
 * Auto detection of local SharePoint instances
 * Validation for existing event hooks
 * Ability to view and modify event receiver definition properties including sequence number
@@ -12,8 +12,8 @@ The SharePoint Event Receiver Manager tool draws upon the needs I've had as a Sh
 * Automatic validation on Add to ensure selected assemblies contain event receiver definitions
 * Automatic filtering of event hooks to show only those events hooks defined in a selected event receiver
 
-**Main Form:**
-![](Home_MainForm1.png)
+## Main Form:
+![Main Form](Home_MainForm1.png)
 
-**Add Dialog:**
-![](Home_AddForm.png)
+## Add Dialog:
+![Add Dialog](Home_AddForm.png)
