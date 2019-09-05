@@ -193,7 +193,16 @@ namespace SPEventReceiverManager
                 }
 
                 this.AssemblyComboBox.Items.AddRange(this.m_ParentForm.GACCache.ToArray());
-
+				//support .Net 4.5 and above since Microsoft change GAC path
+                gac = new DirectoryInfo(@"C:\Windows\Microsoft.NET\assembly\GAC_MSIL");
+				if(gac.Exists){
+					files = gac.GetFiles("*.dll", SearchOption.AllDirectories);
+					foreach (FileInfo file in files)
+					{
+						this.m_ParentForm.GACCache.Add(file);
+					}
+					this.AssemblyComboBox.Items.AddRange(this.m_ParentForm.GACCache.ToArray());
+				}
                 this.SetUIState(true);
 
                 MessageBox.Show(this, "The GAC has been loaded. If you're adding additional event receiver hooks, you will not need to reload assemblies in the GAC. Please select an assembly.", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
